@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { Button,  Row, Divider } from 'antd';
 
 class View extends React.Component{
     constructor(props){
         super(props);
-   this.state = {count:0};
+        this.state = {count:0};
         this.plus = this.plus.bind(this);
         this.minus = this.minus.bind(this);
         this.reset = this.reset.bind(this);
@@ -16,19 +16,26 @@ class View extends React.Component{
         this.setState(state => ({count: state.count + 1}));
     }
     minus(){
-        this.setState(state =>({count: state.count -1}));
+        this.setState(state => ({count: state.count - 1}));
     }
 
 
 
     render(){
-        return(
+        return(<>
             <div className='view'>
-                <span> {this.state.count}</span>
-                <button onClick={this.plus}>+</button>
-                <button onClick = {this.reset}>Reset</button>
-                <button onClick = {this.minus} >-</button>
+                <Divider>
+                <Row>
+                    <Divider>
+                        <span> {this.state.count}</span>
+                    </Divider>
+                </Row>
+                <Button type="primary" onClick={this.plus}>+</Button>
+                <Button type="primary"  onClick = {this.reset}>Reset</Button>
+                <Button type="primary" danger onClick = {this.minus}>-</Button>
+                </Divider>
             </div>
+            </>
         )
     }
 }

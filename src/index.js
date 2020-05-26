@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { Row, Col } from 'antd';
+import 'antd/dist/antd.css'; 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ReactDOM.render(<>
+    <Row>
+      <Col span={24}>
+         <App />
+      </Col>
+    </Row>
+    </>,
   document.getElementById('root')
 );
 
